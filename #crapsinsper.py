@@ -159,3 +159,49 @@ while saldo>0:
            if soma_dados==11 or soma_dados==12:
                saldo+=ficha*2
                print("Você ganhou o dobro do que apostou, seu saldo agora é de {0}".format(saldo))
+
+        if aposta2 == "Pass Line Bat e Any Craps":
+            print("Nesta fase, se a soma dos dados for 2, 3 ou 12, você ganhará seis vezes o que apostou; se for 7 ou 11, não ganha nem perde nada; se for 4,5,6,8,9 ou 10, você perde as fichas que apostou e muda para fase Point")
+            dado1= random.randrange(1,7)
+            dado2= random.randrange(1,7)
+            soma_dados= dado1+dado2
+            print(soma_dados)
+            ficha = int(input("Quantas fichas deseja apostar? "))
+            if soma_dados==2 or soma_dados==3 or soma_dados==12:
+                saldo+=ficha*6
+                print("Você ganhou seis vezes as fichas que apostou, seu saldo agora é de {0}".format(saldo))
+            if soma_dados==7 or soma_dados==11:
+                saldo=saldo
+                print("Você não ganhou nem perdeu nada, seu saldo continua {0}".format(saldo))
+            if soma_dados==4 or soma_dados==5 or soma_dados==6 or soma_dados==8 or soma_dados==9 or soma_dados==10:
+                saldo-=ficha
+                print("Você foi para a fase Point e perdeu as fichas que apostou, seu saldo é de {0}".format(saldo))
+                print("O seu objetivo agora é sortear os dados para que a soma deles seja igual a {0}".format(soma_dados))
+                dado1_point= random.randrange(1,7)
+                dado2_point= random.randrange(1,7)
+                soma_dados_point=dado1_point+dado2_point
+                a= True
+
+                if soma_dados_point==soma_dados:
+                    a= False
+                    saldo+=ficha
+                    print("Você ganhou! Seu saldo agora é de {0}".format(saldo))
+                elif soma_dados_point == 7:
+                    a= False
+                    saldo==0
+                    print("Você perdeu! Seu saldo agora é {0}".format(saldo))
+                else:
+                    while a == True:
+                        print("Você ainda esta na fase Point, os dados serão jogados novamente até que você ganhe, ou tire 7 (perdendo o jogo)")
+                        
+                        dado1_point= random.randrange(1,7)
+                        dado2_point= random.randrange(1,7)
+                        soma_dados_point=dado1_point+dado2_point
+                        if soma_dados_point==soma_dados:
+                            a= False
+                            saldo+=ficha
+                            print("Você ganhou! Seu saldo agora é de {0}".format(saldo))
+                        elif soma_dados_point == 7:
+                            a= False
+                            saldo-=saldo
+                            print("Você perdeu! Seu saldo agora é {0}".format(saldo))
