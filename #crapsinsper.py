@@ -75,4 +75,17 @@ while saldo>0:
            else:
                saldo+=(ficha*3)
                print("A soma dos seus dados foi de {0}, você ganhou! Você agora tem {1} fichas".format(soma_dados,saldo))
-   
+ 
+       elif aposta == "Any Craps":
+           dado1= random.randrange(1,7)
+           dado2= random.randrange(1,7)
+           soma_dados= dado1+dado2
+           print(soma_dados)
+           ficha = int(input("Quantas fichas deseja apostar? "))
+           if soma_dados==2 or soma_dados==3 or soma_dados==12:
+               saldo+=(ficha*7)
+               print("A soma dos seus dados foi de {0}, você ganhou! Você agora tem {1} fichas".format(soma_dados,saldo))
+           else:
+               saldo-=ficha
+               print ("A soma dos seus dados foi de {0}, você sua aposta, seu saldo agora é de {1}".format(soma_dados,saldo))
+ 
