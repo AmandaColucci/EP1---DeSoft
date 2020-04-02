@@ -312,7 +312,7 @@ while saldo>0:
                print("Você tirou dois seis, seu saldo agora é de {0}".format(saldo))
  
    if quantas_apostas==3:
-       aposta3= input("Suas opções de aposta são: Pass Line Bat, Field e Any Craps; Pass Line Bat, Field e Twelve; Pass Line Bat, Any Craps e Twelve; Field, Any Craps e Twelve ")
+       aposta3= input("Suas opções de aposta são: Pass Line Bat, Field e Any Craps; Pass Line Bat, Field e Twelve; Pass Line Bat, Any Craps e Twelve; Field, Any Craps e Twelve (Escreva a opção que deseja exatamente como esta aqui) ")
         if aposta3== "Pass Line Bat, Field e Any Craps":
             print("Neste tipo de aposta, se a soma dos dados for 2, você ganha 8 vezes a aposta; se for 3, ganha sete vezes a aposta; se for 4,9 ou 10, vai para fase point; se tirar 5,6,7 ou 8, perde tudo; se for 11, ganha a aposta; se for 12, ganha 9 vezes as fichas que apostou.")
             dado1= random.randrange(1,7)
@@ -488,5 +488,58 @@ while saldo>0:
            if soma_dados==12:
                saldo+=ficha*40
                print("A soma dos seus dados foi de 12, seu saldo agora é {0}".format(saldo))
- 
+    if quantas_apostas==4:
+        print("Nesta fase, se a soma dos dados for 2, você ganha sete vezes o que apostou, se a soma for 3, ganha seis vezes o que apostou, se for 4, 9 ou 10, vai para a fase Point e perde o que apostou, se for 6,7 ou 8, perde tudo, se for 11, não ganha nem perde nada e se for 12, ganha trinta e nova vezes as fichas que apostou.")
+        dado1= random.randrange(1,7)
+        dado2= random.randrange(1,7)
+        soma_dados= dado1+dado2
+        print(soma_dados)
+        ficha = int(input("Quantas fichas deseja apostar? "))
+        if soma_dados==2:
+            saldo+=ficha*7
+            print(" a soma dos seus dados foi 2, seu saldo agora é {0}".format(saldo))
+        if soma_dados==3:
+            saldo+=ficha*6
+            print(" a soma dos seus dados foi 3, seu saldo agora é {0}".format(saldo))
+        if soma_dados==4 or soma_dados==9 or soma_dados==10:
+            saldo-=ficha
+            print("Você foi para a fase Point e perdeu duas vezes as fichas que apostou, seu saldo é de {0}".format(saldo))
+            print("O seu objetivo agora é sortear os dados para que a soma deles seja igual a {0}".format(soma_dados))
+            dado1_point= random.randrange(1,7)
+            dado2_point= random.randrange(1,7)
+            soma_dados_point=dado1_point+dado2_point
+            a= True
+        
+            if soma_dados_point==soma_dados:
+                a= False
+                saldo+=ficha
+                print("Você ganhou! Seu saldo agora é de {0}".format(saldo))
+            elif soma_dados_point == 7:
+                a= False
+                saldo==0
+                print("Você perdeu! Seu saldo agora é {0}".format(saldo))
+            else:
+                while a == True:
+                    print("Você ainda esta na fase Point, os dados serão jogados novamente até que você ganhe, ou tire 7 (perdendo o jogo)")
+                        
+                    dado1_point= random.randrange(1,7)
+                    dado2_point= random.randrange(1,7)
+                    soma_dados_point=dado1_point+dado2_point
+                    if soma_dados_point==soma_dados:
+                        a= False
+                        saldo+=ficha
+                        print("Você ganhou! Seu saldo agora é de {0}".format(saldo))
+                    elif soma_dados_point == 7:
+                        a= False
+                        saldo-=saldo
+                        print("Você perdeu! Seu saldo agora é {0}".format(saldo))
+        if soma_dados==6 or soma_dados==7 or soma_dados==8:
+            saldo-=saldo
+            print("A soma dos seus dados foi {0}, você perdeu tudo.".format(soma_dados))
+        if soma_dados==11:
+            saldo=saldo
+            print("a soma dos seus dados foi de 11, seu saldo continua {0}".format(saldo))
+        if soma_dados==12:
+            saldo+=ficha*39
+            print(" a soma dos seus dados foi 12, seu saldo agora é {0}".format(saldo))
                        
