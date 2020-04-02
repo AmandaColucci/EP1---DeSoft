@@ -60,3 +60,21 @@ while saldo>0:
                             a= False
                             saldo-=saldo
                             print("Você perdeu! Seu saldo agora é {0}".format(saldo))
+
+        elif aposta == "Field":
+            dado1= random.randrange(1,7)
+            dado2= random.randrange(1,7)
+            soma_dados= dado1+dado2
+            ficha = int(input("Quantas fichas deseja apostar? "))
+            if soma_dados==5 or soma_dados==6 or soma_dados==7 or soma_dados==8:
+                saldo-=saldo
+                print ("A soma dos seus dados foi de {0}, você perdeu o jogo!".format(soma_dados))
+            elif soma_dados==3 or soma_dados==4 or soma_dados==9 or soma_dados==10 or soma_dados==11:
+                saldo+=ficha
+                print("A soma dos seus dados foi de {0}, você ganhou! Você agora tem {1} fichas".format(soma_dados,saldo))
+            elif soma_dados==2:
+                saldo+=(ficha*2)
+                print("A soma dos seus dados foi de {0}, você ganhou! Você agora tem {1} fichas".format(soma_dados,saldo))
+            else:
+                saldo+=(ficha*3)
+                print("A soma dos seus dados foi de {0}, você ganhou! Você agora tem {1} fichas".format(soma_dados,saldo))
