@@ -75,4 +75,4 @@ while saldo>0:
            else:
                saldo+=(ficha*3)
                print("A soma dos seus dados foi de {0}, você ganhou! Você agora tem {1} fichas".format(soma_dados,saldo))
- 
+   
