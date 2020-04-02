@@ -313,4 +313,109 @@ while saldo>0:
  
    if quantas_apostas==3:
        aposta3= input("Suas opções de aposta são: Pass Line Bat, Field e Any Craps; Pass Line Bat, Field e Twelve; Pass Line Bat, Any Craps e Twelve; Field, Any Craps e Twelve ")
-               
+        if aposta3== "Pass Line Bat, Field e Any Craps":
+            print("Neste tipo de aposta, se a soma dos dados for 2, você ganha 8 vezes a aposta; se for 3, ganha sete vezes a aposta; se for 4,9 ou 10, vai para fase point; se tirar 5,6,7 ou 8, perde tudo; se for 11, ganha a aposta; se for 12, ganha 9 vezes as fichas que apostou.")
+            dado1= random.randrange(1,7)
+            dado2= random.randrange(1,7)
+            soma_dados= dado1+dado2
+            ficha = int(input("Quantas fichas deseja apostar? "))
+            if soma_dados==2:
+                saldo+=ficha*8
+                print("você tirou dois uns, seu saldo agora é de {0}".format(saldo))
+            if soma_dados==3:
+                saldo+=ficha*7
+                print("a sua soma dos dados foi de 3, seu saldo algora é de {0}".format(saldo))
+            if soma_dados==5 or soma_dados==6 or soma_dados==7 or soma_dados==8:
+                saldo-=saldo
+                print("a soma dos seus dados foi de {0}, seu saldo agora é {1}".format(soma_dados,saldo))
+            if soma_dados==11:
+                saldo+=ficha
+                print("a soma dos seus dados foi de 11, seu saldo agora é {0}".format(saldo))
+            if soma_dados== 12:
+                saldo+=ficha*9
+                print("você tirou dois seis, seu saldo agora é de {0}".format(saldo))
+            if soma_dados==4 or soma_dados==9 or soma_dados==10:
+                print("Você foi para a fase Point ")
+                print("O seu objetivo agora é sortear os dados para que a soma deles seja igual a {0}".format(soma_dados))
+                dado1_point= random.randrange(1,7)
+                dado2_point= random.randrange(1,7)
+                soma_dados_point=dado1_point+dado2_point
+                a= True
+
+                if soma_dados_point==soma_dados:
+                    a= False
+                    saldo+=ficha
+                    print("Você ganhou! Seu saldo agora é de {0}".format(saldo))
+                elif soma_dados_point == 7:
+                    a= False
+                    saldo==0
+                    print("Você perdeu! Seu saldo agora é {0}".format(saldo))
+                else:
+                    while a == True:
+                        print("Você ainda esta na fase Point, os dados serão jogados novamente até que você ganhe, ou tire 7 (perdendo o jogo)")
+                            
+                        dado1_point= random.randrange(1,7)
+                        dado2_point= random.randrange(1,7)
+                        soma_dados_point=dado1_point+dado2_point
+                        if soma_dados_point==soma_dados:
+                            a= False
+                            saldo+=ficha
+                            print("Você ganhou! Seu saldo agora é de {0}".format(saldo))
+                        elif soma_dados_point == 7:
+                            a= False
+                            saldo-=saldo
+                            print("Você perdeu! Seu saldo agora é {0}".format(saldo))
+
+        if aposta3== "Pass Line Bat, Field e Twelve":
+            print("Neste tipo de aposta, se a soma dos dados for 2 você continua com o seu saldo inalterado; se for 3, perde o que apostou; se for 4,9 ou 10, você vai para fase Point; se for 5,6,7 ou 8, você perde tudo;se for 11, ganha o que apostou; se for 12, ganha 32 vezes o que apostou. ")
+            dado1= random.randrange(1,7)
+            dado2= random.randrange(1,7)
+            soma_dados= dado1+dado2
+            print(soma_dados)
+            ficha = int(input("Quantas fichas deseja apostar? "))
+            if soma_dados==2 :
+                saldo=saldo
+                print("você tirou dois uns, o seu saldo continua {0} ".format(saldo))
+            if soma_dados==3:
+                saldo-=ficha
+                print("Você perdeu as fichas que apostou, seu saldo agora é de {0}".format(saldo))
+            if soma_dados==5 or soma_dados==6 or soma_dados==7 or soma_dados==8:
+                saldo-=saldo
+                print("a soma dos seus dados foi de {0}, você perdeu tudo".format(soma_dados))
+            if soma_dados==11:
+                saldo+=ficha
+                print("a soma dos seus dados foi de 11, você ganhou a aposta, seu saldo agora é de {0}".format(saldo))
+            if soma_dados== 12:
+                saldo+=ficha*32
+                print("a soma dos seus dados foi de 12, seu saldo agora é de {0}".format(saldo))
+            if soma_dados==4 or soma_dados==9 or soma_dados==10:
+                print("Você foi para a fase Point ")
+                print("O seu objetivo agora é sortear os dados para que a soma deles seja igual a {0}".format(soma_dados))
+                dado1_point= random.randrange(1,7)
+                dado2_point= random.randrange(1,7)
+                soma_dados_point=dado1_point+dado2_point
+                a= True
+
+                if soma_dados_point==soma_dados:
+                    a= False
+                    saldo+=ficha
+                    print("Você ganhou! Seu saldo agora é de {0}".format(saldo))
+                elif soma_dados_point == 7:
+                    a= False
+                    saldo==0
+                    print("Você perdeu! Seu saldo agora é {0}".format(saldo))
+                else:
+                    while a == True:
+                        print("Você ainda esta na fase Point, os dados serão jogados novamente até que você ganhe, ou tire 7 (perdendo o jogo)")
+                            
+                        dado1_point= random.randrange(1,7)
+                        dado2_point= random.randrange(1,7)
+                        soma_dados_point=dado1_point+dado2_point
+                        if soma_dados_point==soma_dados:
+                            a= False
+                            saldo+=ficha
+                            print("Você ganhou! Seu saldo agora é de {0}".format(saldo))
+                        elif soma_dados_point == 7:
+                            a= False
+                            saldo-=saldo
+                            print("Você perdeu! Seu saldo agora é {0}".format(saldo))
