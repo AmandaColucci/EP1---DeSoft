@@ -160,7 +160,7 @@ while saldo>0:
                saldo+=ficha*2
                print("Você ganhou o dobro do que apostou, seu saldo agora é de {0}".format(saldo))
 
-        if aposta2 == "Pass Line Bat e Any Craps":
+       if aposta2 == "Pass Line Bat e Any Craps":
             print("Nesta fase, se a soma dos dados for 2, 3 ou 12, você ganhará seis vezes o que apostou; se for 7 ou 11, não ganha nem perde nada; se for 4,5,6,8,9 ou 10, você perde as fichas que apostou e muda para fase Point")
             dado1= random.randrange(1,7)
             dado2= random.randrange(1,7)
@@ -254,7 +254,7 @@ while saldo>0:
                            saldo-=saldo
                            print("Você perdeu! Seu saldo agora é {0}".format(saldo))
 
-        if aposta2== "Field e Any Craps":
+       if aposta2== "Field e Any Craps":
             print("Nesta fase do jogo, se a soma dos dados jogados for 4,9,10 ou 11, o jogador não ganha nem perde nada; se for 5,6,7 ou 8, o jogador perde tudo; se for 3 você ganha trinta e uma vezes o que apostou; se for 2, ganha trinta e duas vezes as fichas que apostou e se for 12, ganha trinta e tres vezes o que apostou.")
             dado1= random.randrange(1,7)
             dado2= random.randrange(1,7)
@@ -313,7 +313,7 @@ while saldo>0:
  
    if quantas_apostas==3:
        aposta3= input("Suas opções de aposta são: Pass Line Bat, Field e Any Craps; Pass Line Bat, Field e Twelve; Pass Line Bat, Any Craps e Twelve; Field, Any Craps e Twelve (Escreva a opção que deseja exatamente como esta aqui) ")
-        if aposta3== "Pass Line Bat, Field e Any Craps":
+       if aposta3== "Pass Line Bat, Field e Any Craps":
             print("Neste tipo de aposta, se a soma dos dados for 2, você ganha 8 vezes a aposta; se for 3, ganha sete vezes a aposta; se for 4,9 ou 10, vai para fase point; se tirar 5,6,7 ou 8, perde tudo; se for 11, ganha a aposta; se for 12, ganha 9 vezes as fichas que apostou.")
             dado1= random.randrange(1,7)
             dado2= random.randrange(1,7)
@@ -366,7 +366,7 @@ while saldo>0:
                             saldo-=saldo
                             print("Você perdeu! Seu saldo agora é {0}".format(saldo))
 
-        if aposta3== "Pass Line Bat, Field e Twelve":
+       if aposta3== "Pass Line Bat, Field e Twelve":
             print("Neste tipo de aposta, se a soma dos dados for 2 você continua com o seu saldo inalterado; se for 3, perde o que apostou; se for 4,9 ou 10, você vai para fase Point; se for 5,6,7 ou 8, você perde tudo;se for 11, ganha o que apostou; se for 12, ganha 32 vezes o que apostou. ")
             dado1= random.randrange(1,7)
             dado2= random.randrange(1,7)
@@ -488,7 +488,7 @@ while saldo>0:
            if soma_dados==12:
                saldo+=ficha*40
                print("A soma dos seus dados foi de 12, seu saldo agora é {0}".format(saldo))
-    if quantas_apostas==4:
+   if quantas_apostas==4:
         print("Nesta fase, se a soma dos dados for 2, você ganha sete vezes o que apostou, se a soma for 3, ganha seis vezes o que apostou, se for 4, 9 ou 10, vai para a fase Point e perde o que apostou, se for 6,7 ou 8, perde tudo, se for 11, não ganha nem perde nada e se for 12, ganha trinta e nova vezes as fichas que apostou.")
         dado1= random.randrange(1,7)
         dado2= random.randrange(1,7)
